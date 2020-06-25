@@ -1,0 +1,490 @@
+body {
+background-color: white;
+font-family: sans-serif;
+}
+ 
+header, footer {
+background-color: #3c3c3b;
+}
+
+footer {
+width: 100%;
+height: 45px;
+position: absolute;
+}
+
+footer p {
+color: white;
+padding-top: 10px;
+text-align: center;
+font-size: 12px;
+}
+
+img {
+width: 160px;
+}
+
+nav {
+width:100%;
+color: white;
+height:auto;
+position:relative;
+display:flex;
+align-items:center;
+justify-content: space-around;
+}
+
+nav a {
+color: white;
+}
+
+a:hover {
+color: white;
+}
+
+ul {
+list-style-type:none;
+}
+
+li {
+display: inline;
+padding-left: 15px;
+}
+
+i {
+margin-top: 10%;
+padding-left: 3px;
+}
+
+.container {
+margin-top: 1%;
+margin-bottom: 1%;
+}
+
+
+#banniere {
+position: relative;
+background-image: url(../images/oak-banniere.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+height: 18rem;
+border-bottom: 1px solid #c7a58a;
+opacity: 80%;
+}
+
+h1 {
+position: absolute;
+top: 50%;
+left: 10%;
+color: white;
+text-shadow: -2px 0 0 #3c3c3b;
+font-size: 4rem;
+}
+
+h2 {
+position: absolute;
+top: 85%;
+left: 10%;
+text-shadow: -2px 0 0 #3c3c3b;
+color: white;
+font-size: 1rem;
+letter-spacing: 5px;
+}
+
+#list-articles {
+display: flex;
+justify-content: space-between;
+margin: auto;
+width: 80%;
+align-items:center;
+flex-direction: column;
+}
+
+.article {
+margin: 3% 0 3% 0;
+border: 1px solid #ccc;
+box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.3);
+display: flex;
+background-color: #f5f5f5;
+color: #3c3c3b;
+opacity: 90%;
+}
+
+.article:hover {
+background-color: white;
+opacity: 100%;
+}
+
+.bloc_photo {
+width: 50%;    
+}
+
+.img_article {
+width: 100%;
+height: 100%;
+}
+
+.bloc_description {
+display: flex;
+}
+
+.bloc_gauche {
+display: flex;
+flex-direction: column;
+font-size: 125%;
+margin-left: 8%;
+width: 60%;
+}
+
+.name_article {
+border-bottom: 1px solid #3c3c3b;
+}
+
+.description_article {
+font-size: 90%;
+text-align: justify;
+}
+
+.bloc_droit {
+font-size: 150%;
+text-align: right;
+}
+
+.price_article {
+font-size: 85%;
+margin-left: 65px;
+}
+
+.selection_article {
+position: relative;
+top: 70px;
+left: 10px;
+font-size: 70%;
+color: white;
+border: 1px solid #3c3c3b;
+border-radius: 10px;
+padding: 12px;
+background-color: #3c3c3b;
+text-decoration: none;
+}
+
+.selection_article:hover {
+background-color: white;
+border: 1px solid #3c3c3b;
+color: #3c3c3b;
+}
+
+/* Page produit */
+
+#product {
+display: flex;
+flex-direction: column;
+width: 55%;
+margin: auto;
+margin-top: 5%;
+margin-bottom: 2%;
+border: 1px solid #ccc;
+box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.3);
+background-color: #f5f5f5;
+}
+
+#img_product {
+width: 80%;
+height: 80%;
+border: 0.75px solid #f3f2e8;
+opacity: 90%;
+}
+
+#img_product:hover {
+opacity: 100%;
+}
+
+#description {
+padding: 2%;
+color: #41372f;
+}
+
+h3 {
+border-bottom: 1px solid #41372f;
+}
+
+#option_select {
+border: 1px solid #ccc;
+border-radius: 5px;
+padding: 1%;
+}
+
+#price_product {
+font-size: 125%;
+}
+
+#add_product {
+background-color: #3c3c3b;
+color: white;
+border: 1px solid #3c3c3b;
+border-radius: 10px;
+font-size: 100%;
+margin: 0 0 0 40%;
+padding: 2% 4% 2% 4%;
+}
+
+#add_product:hover{
+background-color: white;
+border: 1px solid #3c3c3b;
+color: #3c3c3b;
+}
+
+#add_done {
+text-align: center;
+font-size: 140%;
+margin: 2% 0 -3% 0;
+color: #3c3c3b;
+}
+
+/* Page du panier */
+
+#empty_basket {
+margin-top: 50px;
+margin-right: 100px;
+}
+
+.basket {
+display: flex;
+justify-content: center;
+margin: 2% 0 3% 0;
+}
+
+#basket-resume {
+margin-right: 5%;
+color: #3c3c3b;
+}
+
+table {
+width: 450px;
+margin: 10% 0 0 5%;
+}
+
+th {
+width: 50%;
+background-color: white;
+color: #3c3c3b;
+font-size: 110%;
+border-bottom: 1px solid #3c3c3b;
+}
+
+td {
+width: 50%;
+padding: 1.5%;
+background-color: white;
+color: #3c3c3b;
+}
+
+#total_sum {
+padding-top: 2%;
+color: #3c3c3b;
+font-size: 110%;
+}
+
+.annulerProduit {
+margin-left: 100%;
+margin-top: 60%;
+color: #3c3c3b;
+}
+
+form {
+border: 1px solid #ccc;
+box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.3);
+width: 500px;
+margin: auto;
+margin-top: 5%;
+padding: 1%;
+background-color: #f5f5f5;
+color: #3c3c3b;
+line-height: 1.5;
+}
+
+fieldset {
+margin: 3%;
+}
+
+.form_group {
+margin: 2%;
+}
+
+input {
+width: 98%;
+border: 1px solid #ccc;
+border-radius: 10px;
+margin-bottom: 2%;
+padding: 0.50%;
+}
+
+#envoiPost {
+color: white;
+background-color: #3c3c3b;
+border: 1px solid #3c3c3b;
+border-radius: 10px;
+margin: 1.5%;
+margin-left: 13%;
+padding: 2.5% 4% 2.5% 4%;
+width: 75%;
+}
+
+#envoiPost:hover{
+background-color: white;
+border: 1px solid #3c3c3b;
+color: #3c3c3b;  
+}
+
+
+#order_result {
+text-align: center;
+}
+/* Partie responsive */
+
+@media all and (max-width: 1320px){
+#add_product {
+margin: 8% 0 0 30%;
+}
+}
+
+@media all and (max-width: 1240px){
+#product {
+flex-direction: column;
+width: 60%;
+}
+#img_product{
+width: 95%;
+height: 200%;
+margin: 2% 2%;
+}
+#add_product {
+margin: -3% 0 5% 63%;
+}
+#price_product {
+margin-left: 75%;
+margin-bottom: 5%;
+}
+}
+
+@media all and (max-width: 1180px){
+.bloc_droit{
+margin-right: 5%;
+}
+}
+
+@media all and (max-width: 1130px)  {
+h1 {
+font-size: 200%;
+}
+h2 {
+font-size: 120%;
+top: 80%;
+}
+.img_article {
+width: 300px;
+height: 200px;
+}
+.description_article {
+font-size: 80%;
+}
+.selection_article {
+top: 90px;
+}
+}
+
+@media all and (max-width: 1080px){
+.basket {
+flex-direction: column;
+}
+#basket-resume{
+margin: auto;
+}
+table {
+width: 525px;
+margin-top: 5%;
+margin: 0;
+}
+}
+
+@media all and (max-width: 960px)  {
+.img_article {
+width: 275px;
+height: 175px;
+}
+.description_article {
+font-size: 80%;
+}
+.selection_article {
+top: 70px;
+}
+}
+
+@media all and (max-width: 900px)  {
+.article{
+flex-direction: column;
+margin: 3% 0 10% 0;
+}
+.selection_article{
+top: 0px;
+}
+.bloc_description {
+margin-bottom: 3%;
+}
+.bloc_photo {
+margin: 5% 4% 2%;
+}
+.img_article {
+width: 180%;
+height: 200%;
+}
+}
+
+@media all and (max-width: 750px)  {
+h1 {
+top: 35%;
+left: 5%;
+}
+h2 {
+top: 55%;
+left: 5%;
+}
+#price_product {
+margin-left: 72%;
+}
+}
+
+@media all and (max-width: 600px) {
+table {
+width: 100%;
+}
+form {
+width: 80%;
+}
+}
+
+@media all and (max-width: 575px) {
+li {
+display: flex;
+}
+.bloc_droit {
+margin-left: -10%;
+}
+#price_product {
+margin-left: 2%;
+margin-top: 5%;
+}
+#add_product {
+margin-left: 10%;
+}
+#envoiPost{
+text-align: center;
+}
+}
+
+
+
+
+
+
+

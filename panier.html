@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="icon" type="image/png" href="images/favicon-orinoco.png"/>
+    <title>Orinoco - Panier</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html"><img src="images/logo-orinoco.svg"/></a>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="panier.html">Mon panier<i class="fas fa-shopping-cart fa-1x" style="color:#fff;"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+	    <main class="basket">
+		<div id="basket-resume">
+			<p id="empty_basket">Votre panier est vide</p>
+		</div>
+		<div class="form">
+			<form method="post" name="form-panier">
+				<fieldset>
+					<legend>Civilité</legend>
+						<label for="formNom">Nom</label></br>
+						<input type="text" id="name" required>
+						<label for="formPrenom" class="right-inline">Prénom</label></br>
+						<input type="text" id="firstname" required>
+				</fieldset> 
+				<fieldset>
+					<legend>Coordonnées</legend>
+						<label for="formMail">E-mail</label></br>
+						<input type="email" id="email" required>
+						<label for="formAdresse">Adresse</label></br>
+						<input type="text" id="address" required>
+						<label for="formVille">Ville</label></br>
+						<input type="text" id="city" required>
+				</fieldset> 
+				<input type="submit" value="Je valide ma commande" id="envoiPost">
+			</form>
+		</div>
+	</main>
+    <footer>
+        <p>Copyright © 2020 - Orinoco</p>
+    </footer>
+	<script src="js/main.js"></script>
+	<script>addition()</script>
+	<script>validForm()</script>
+</body>

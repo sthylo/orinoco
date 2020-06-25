@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="icon" type="image/png" href="images/favicon-orinoco.png"/>
+    <title>Orinoco - Nos meubles</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html"><img src="images/logo-orinoco.svg"/></a>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="panier.html">Mon panier<i class="fas fa-shopping-cart fa-1x" style="color:#fff;"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    <p id="add_done"></p>
+    <main id="main">
+        <section id="product">
+            <div class="container">
+                <div class="row">
+                <div class="col">          
+                <div class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                <img src="#" id="img_product" class="d-block w-100" alt="Photo du produit">
+               </div>
+               </div>
+               </div>        
+               </div>
+               </div>
+            <div id="description">
+                <h3 id="name_product"></h3>
+                <p id="description_product"></p>
+                <label>Choisir un vernis</label>
+                <select name="option" id="option_select">
+                </select>
+                <p id="price_product"></p>
+                <button id="add_product">Ajouter au panier</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Copyright © 2020 - Orinoco</p>
+    </footer>
+    <script src="js/main.js"></script>
+    <script>detailProduit()</script>
+    <script>addPanier()</script>
+</body>
+</html>
