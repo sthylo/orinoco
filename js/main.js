@@ -11,24 +11,27 @@ if (localStorage.getItem("userBasket")) {
   	localStorage.setItem("userBasket", JSON.stringify(panierInit));
 };
 
-let contact;
-let products = [];
+
 
 let userBasket = JSON.parse(localStorage.getItem("userBasket"));
 
 function getProduits(){
-	return new Promise((resolve) => {
-		let request = new XMLHttpRequest();
-		request.onreadystatechange = function() {
-			(this.readyState == XMLHttpRequest.DONE && this.status == 200) 
-			{
-				resolve(JSON.parse(this.responseText));
-				console.log("Connection ok");
-			}
-		}
-		request.open("GET", APIURL + idProduit);
-		request.send();
-	});
+  return new Promise((resolve) => {
+    let request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+      if(this.readyState == XMLHttpRequest.DONE && this.status == 200) 
+      {
+        resolve(JSON.parse(this.responseText));
+        console.log("connection ok");
+        error = document.getElementById("error");
+        if(error){
+          error.remove();
+        }
+      }
+    }
+    request.open("GET", APIURL + idProduit);
+    request.send();
+  });
 };
 
 async function allProductsList(){
@@ -193,6 +196,60 @@ function annulerProduit(i){
 };
 
 
+function checkInput(){
+  
+    let checkString = /^[a-zA-Z ,.'-]/;
+    let checkMail = /.+@.+\..+/;
+    let checkAdresse = /^[^@&"()!_$*€£`%+=\/;?#]+$/;
+
+    let checkMessage = "";
+
+    let formNom = document.getElementById("name").value;
+    let formPrenom = document.getElementById("firstname").value;
+    let formMail = document.getElementById("email").value;
+    let formAdresse = document.getElementById("address").value;
+    let formVille = document.getElementById("city").value;
+
+
+    if(checkString.test(formNom) == false){
+      checkMessage = "Nom : Format de votre nom incorrect";
+    }else{
+      console.log("Nom ok");
+    };
+    if(checkString.test(formPrenom) == false){
+      checkMessage = checkMessage + "\n" + "Prénom : Format de votre prénom incorrect";
+    }else{
+      console.log("Prénom ok");
+    };
+    if(checkMail.test(formMail) == false){
+      checkMessage = checkMessage + "\n" + "e-mail : Votre email doit être au format xxxx@yyy.zzz";
+    }else{
+      console.log("Adresse mail ok");
+    };
+    if(checkAdresse.test(formAdresse) == false){
+      checkMessage = checkMessage + "\n" + `Adresse : L'un ou plusieurs des caractères suivants sont interdits [^@&"()!_$*€£%+=`;
+    }else{
+      console.log("Adresse ok");
+    };
+    if(checkString.test(formVille) == false){
+      checkMessage = checkMessage + "\n" + "Ville : Format de votre ville incorrect";
+    }else{
+      console.log("Ville ok")
+    };
+    if(checkMessage != ""){
+      alert("ATTENTION" + "\n" + checkMessage);
+    } else {
+      contact = {
+        name: formNom,
+        firstName: formPrenom,
+        email: formMail,
+        address: formAdresse,
+        city: formVille
+      };
+    return true;
+    };
+};
+
 function checkPanier(){
   let etatPanier = JSON.parse(localStorage.getItem("userBasket"));
   if(etatPanier.length < 1) {
@@ -208,52 +265,70 @@ function checkPanier(){
   }
 };
 
+let contact;
+let products = [];
+let url = "http://localhost:3000/api/furniture/order";
 
-envoiDonnees = (objetRequest) => {
+envoiDonnees = (objetRequest, url) => {
   return new Promise((resolve) => {
     let request = new XMLHttpRequest();
-    request.open('POST', APIURL + "order");
-    request.setRequestHeader("Content-type", "application/json");
-    request.onreadystatechange = function() {
-        if(this.readyState == 4 && this.status == 201) {
-          resolve(JSON.parse(this.responseText));
-          window.location = "./confirmation.html";
-          contact = {};
-          products = [];
-          localStorage.clear();
+    request.onload = function () {
+      if (this.readyState == XMLHttpRequest.DONE && this.status == 201) {
+        sessionStorage.setItem("order", this.responseText);
+        window.location = "./confirmation.html";
+        resolve(JSON.parse(this.responseText));
+        console.log(objetRequest);
         } else {
           alert("Erreur");
         }
-    }
-    request.send(objetRequest);  
-  }
-)};
+    };
+    request.open("POST", url);
+    request.setRequestHeader("Content-Type", "application/json");
+    request.send(objetRequest);
+    console.log(objetRequest);
+  });
+};
 
 function validForm(){ 
-    if(checkPanier() == true){
+  let commande = document.getElementById("formulaire");
+  commande.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if(checkPanier() == true && checkInput() != null) {
+      console.log("L'envoi peut etre fait");
+      userBasket.forEach((produit) => {
+        products.push(produit._id);
+      });
+      console.log("Ce tableau sera envoyé à l'API : " + products);
+
+
       let objet = {
         contact,
         products
       };
+
       let objetRequest = JSON.stringify(objet);
-      console.log("L'envoi peut etre fait");
-      console.log("Admin : " + objetRequest);
-      envoiDonnees(objetRequest);
+      envoiDonnees(objetRequest, url);
+      console.log(objet);
+      
+      contact = {};
+      products = [];
+      localStorage.clear();
     }else{
       console.log("Erreur");
-    };
-};
+    }
+  });
+};  
 
 function resultOrder(){
-	if(sessionStorage.getItem("order") != null){
-    document.location = "./confirmation.html";
+	if (sessionStorage.getItem("order") != null) {
     let order = JSON.parse(sessionStorage.getItem("order"));
-    document.getElementById("lastName").innerHTML = order.contact.lastName;
+    document.getElementById("firstName").innerHTML = order.contact.firstName;
     document.getElementById("orderId").innerHTML = order.orderId;
+    console.log(order);
     sessionStorage.removeItem("order");
   }else{
     alert("Aucune commande passée, vous êtes arrivé ici par erreur");
     window.location = "./index.html";
   }
-}
+};
 
