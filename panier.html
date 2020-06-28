@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
-    <link rel="stylesheet" href="./CSS/style.css">
-    <link rel="stylesheet" href="./CSS/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
     <link rel="icon" type="image/png" href="images/favicon-orinoco.png"/>
     <title>Orinoco - Panier</title>
 </head>
@@ -24,7 +24,7 @@
 			<p id="empty_basket">Votre panier est vide</p>
 		</div>
 		<div class="form">
-			<form method="post" name="form-panier">
+			<form method="post" name="form-panier" id="formulaire">
 				<fieldset>
 					<legend>Civilité</legend>
 						<label for="formNom">Nom</label></br>
@@ -41,7 +41,7 @@
 						<label for="formVille">Ville</label></br>
 						<input type="text" id="city" required>
 				</fieldset> 
-				<input type="submit" value="Je valide ma commande" id="envoiPost">
+				<input type="submit" value="Je valide ma commande" id="envoiPost" onclick="validForm()">
 			</form>
 		</div>
 	</main>
@@ -50,5 +50,4 @@
     </footer>
 	<script src="js/main.js"></script>
 	<script>addition()</script>
-	<script>validForm()</script>
 </body>
