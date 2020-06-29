@@ -290,8 +290,8 @@ envoiDonnees = (objetRequest, url) => {
 };
 
 function validForm(){ 
-  let commande = document.getElementById("formulaire");
-  commande.addEventListener("submit", (event) => {
+  let envoiPost = document.getElementById("formulaire");
+  envoiPost.addEventListener("submit", (event) => {
     event.preventDefault();
     if(checkPanier() == true && checkInput() != null) {
       console.log("L'envoi peut etre fait");
