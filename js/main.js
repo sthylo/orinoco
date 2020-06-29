@@ -310,9 +310,9 @@ function validForm(){
       envoiDonnees(objetRequest, url);
       console.log(objet);
       
-      contact = {};
-      products = [];
-      localStorage.clear();
+      //contact = {};
+      //products = [];
+      //localStorage.clear();
     }else{
       console.log("Erreur");
     }
