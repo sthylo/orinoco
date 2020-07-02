@@ -28,20 +28,20 @@
 				<fieldset>
 					<legend>Civilité</legend>
 						<label for="formNom">Nom</label></br>
-						<input type="text" id="name" required>
-						<label for="formPrenom" class="right-inline">Prénom</label></br>
-						<input type="text" id="firstname" required>
+						<input type="text" id="formNom" required>
+						<label for="formPrenom">Prénom</label></br>
+						<input type="text" id="formPrenom" required>
 				</fieldset> 
 				<fieldset>
 					<legend>Coordonnées</legend>
 						<label for="formMail">E-mail</label></br>
-						<input type="email" id="email" required>
+						<input type="email" id="formMail" required>
 						<label for="formAdresse">Adresse</label></br>
-						<input type="text" id="address" required>
+						<input type="text" id="formAdresse" required>
 						<label for="formVille">Ville</label></br>
-						<input type="text" id="city" required>
+						<input type="text" id="formVille" required>
 				</fieldset> 
-				<input type="submit" value="Je valide ma commande" id="envoiPost" onclick="validForm()">
+				<input type="submit" value="Je valide ma commande" id="envoiPost">
 			</form>
 		</div>
 	</main>
@@ -50,4 +50,5 @@
     </footer>
 	<script src="js/main.js"></script>
 	<script>addition()</script>
+	<script>validForm()</script>
 </body>
