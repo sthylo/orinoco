@@ -326,6 +326,12 @@ function resultOrder(){
     let order = JSON.parse(localStorage.getItem("order"));
     document.getElementById("firstName").innerHTML = order.contact.firstName;
     document.getElementById("orderId").innerHTML = order.orderId;
+    let priceOrder = 0;
+    let displayPrice = order.products;
+    displayPrice.forEach((element) =>{
+    priceOrder += element.price / 100;
+    });
+    document.getElementById("priceOrder").innerHTML = priceOrder;
     console.log(order);
 /* Une fois la commande validée = on vide le panier */    
     localStorage.removeItem("order");
@@ -335,4 +341,3 @@ function resultOrder(){
     window.location = "./index.html";
   }
 };
-
