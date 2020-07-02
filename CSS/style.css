@@ -9,8 +9,9 @@ background-color: #3c3c3b;
 
 footer {
 width: 100%;
-height: 45px;
-position: absolute;
+height: 40px;
+bottom: 0;
+position: fixed;
 }
 
 footer p {
@@ -56,11 +57,12 @@ margin-top: 10%;
 padding-left: 3px;
 }
 
+/* ACCUEIL */
+
 .container {
 margin-top: 1%;
 margin-bottom: 1%;
 }
-
 
 #banniere {
 position: relative;
@@ -68,7 +70,6 @@ background-image: url(../images/oak-banniere.jpg);
 background-repeat: no-repeat;
 background-size: cover;
 height: 18rem;
-border-bottom: 1px solid #c7a58a;
 opacity: 80%;
 }
 
@@ -95,6 +96,7 @@ letter-spacing: 5px;
 display: flex;
 justify-content: space-between;
 margin: auto;
+margin-bottom: 2%;
 width: 80%;
 align-items:center;
 flex-direction: column;
@@ -107,12 +109,12 @@ box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.3);
 display: flex;
 background-color: #f5f5f5;
 color: #3c3c3b;
-opacity: 90%;
+opacity: 100%;
 }
 
 .article:hover {
 background-color: white;
-opacity: 100%;
+opacity: 90%;
 }
 
 .bloc_photo {
@@ -174,7 +176,7 @@ border: 1px solid #3c3c3b;
 color: #3c3c3b;
 }
 
-/* Page produit */
+/* PRODUIT */
 
 #product {
 display: flex;
@@ -182,7 +184,7 @@ flex-direction: column;
 width: 55%;
 margin: auto;
 margin-top: 5%;
-margin-bottom: 2%;
+margin-bottom: 5%;
 border: 1px solid #ccc;
 box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.3);
 background-color: #f5f5f5;
@@ -192,11 +194,11 @@ background-color: #f5f5f5;
 width: 80%;
 height: 80%;
 border: 0.75px solid #f3f2e8;
-opacity: 90%;
+opacity: 100%;
 }
 
 #img_product:hover {
-opacity: 100%;
+opacity: 90%;
 }
 
 #description {
@@ -241,7 +243,7 @@ margin: 2% 0 -3% 0;
 color: #3c3c3b;
 }
 
-/* Page du panier */
+/* PANIER ET FORMULAIRE */
 
 #empty_basket {
 margin-top: 50px;
@@ -336,11 +338,19 @@ border: 1px solid #3c3c3b;
 color: #3c3c3b;  
 }
 
+/* CONFIRMATION */
 
 #order_result {
 text-align: center;
+width: 70%;
+border: 1px solid #3c3c3b;
+margin: auto;
+margin-top: 5%;
+margin-bottom: 5%;
+padding: 5% 0 5% 0;
 }
-/* Partie responsive */
+
+/* RESPONSIVE */
 
 @media all and (max-width: 1320px){
 #add_product {
@@ -349,9 +359,13 @@ margin: 8% 0 0 30%;
 }
 
 @media all and (max-width: 1240px){
+#list-articles {
+margin-bottom: 5%;
+}
 #product {
 flex-direction: column;
-width: 60%;
+width: 80%;
+margin-bottom: 15%;
 }
 #img_product{
 width: 95%;
@@ -460,12 +474,16 @@ width: 100%;
 }
 form {
 width: 80%;
+margin-bottom: 15%;
 }
 }
 
 @media all and (max-width: 575px) {
 li {
 display: flex;
+}
+#list-articles {
+margin-bottom: 10%;
 }
 .bloc_droit {
 margin-left: -10%;
@@ -481,10 +499,3 @@ margin-left: 10%;
 text-align: center;
 }
 }
-
-
-
-
-
-
-
